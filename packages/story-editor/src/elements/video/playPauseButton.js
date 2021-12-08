@@ -91,8 +91,8 @@ const iconCss = css`
   height: ${ICON_SVG_SIZE}px;
   pointer-events: none;
   transform: translate(
-    ${({ isRTL }) =>
-      ((PLAY_BUTTON_SIZE - ICON_SVG_SIZE) / 2) * (isRTL ? -1 : 1)}px,
+    ${({ $isRTL }) =>
+      ((PLAY_BUTTON_SIZE - ICON_SVG_SIZE) / 2) * ($isRTL ? -1 : 1)}px,
     ${(PLAY_BUTTON_SIZE - ICON_SVG_SIZE) / 2}px
   );
   color: ${({ theme }) => theme.colors.standard.white};
@@ -272,7 +272,7 @@ function PlayPauseButton({
             onMouseDown={handlePlayPause}
             isAbove={isPlayAbove}
           >
-            <Icon isRTL={isRTL} />
+            <Icon $isRTL={isRTL} />
           </ButtonWrapper>
         </TransitionWrapper>
       )}
